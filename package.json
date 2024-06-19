@@ -1,0 +1,67 @@
+{
+  "name": "@ubie/ubie-icons-native",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ubie-oss/ubie-icons-native.git"
+  },
+  "version": "0.7.0",
+  "description": "Icons used in Ubie native apps.",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "figma": "node ./scripts/figma.js",
+    "build:svg": "svgr --native --template native-template.js -d src assets",
+    "build:ts": "tsup",
+    "build:copy-svgs": "test -d dist || mkdir dist && cp -R assets/*.svg dist",
+    "build": "npm run build:svg && npm run build:ts && npm run build:copy-svgs",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@storybook/addon-actions": "^8.0.9",
+    "@storybook/addon-essentials": "^8.0.9",
+    "@storybook/addon-interactions": "^8.0.9",
+    "@storybook/addon-links": "^8.0.9",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
+    "@storybook/react-webpack5": "^8.0.9",
+    "@svgr/cli": "^8.1.0",
+    "@types/react": "^18.2.79",
+    "@ubie/prettier-config": "^0.1.0",
+    "node-fetch": "^3.3.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-svg": "^15.1.0",
+    "storybook": "^8.0.9",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@types/react": "^17 || ^18",
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18",
+    "react-native-svg": "^15.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}
