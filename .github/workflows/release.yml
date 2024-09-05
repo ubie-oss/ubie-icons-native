@@ -40,7 +40,7 @@ jobs:
         run: npm run build
 
       - name: Release
-        run: npx release-it -i ${{ github.event.inputs.semver }} --ci
+        run: npx release-it@15.10.3 -i ${{ github.event.inputs.semver }} --ci
 
       - name: Set PACKAGE_VERSION
         run: echo "PACKAGE_VERSION=$(cat package.json | jq -r .version)" >> $GITHUB_ENV
