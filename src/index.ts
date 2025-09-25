@@ -170,6 +170,7 @@ export { default as RedoIcon } from './RedoIcon';
 export { default as ReloadIcon } from './ReloadIcon';
 export { default as ReturnIcon } from './ReturnIcon';
 export { default as RotateIcon } from './RotateIcon';
+export { default as ScanIcon } from './ScanIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as SecurityIcon } from './SecurityIcon';
 export { default as SendIcon } from './SendIcon';
