@@ -1,4 +1,4 @@
-# Ubie Icons
+# Ubie Icons Native
 
 Storybook: https://ubie-oss.github.io/ubie-icons/storybook-static/
 
@@ -12,6 +12,9 @@ npm install @ubie/ubie-icons
 
 // with yarn
 yarn add @ubie/ubie-icons
+
+// with pnpm
+pnpm add @ubie/ubie-icons
 ```
 
 ### React Native
@@ -22,6 +25,9 @@ npm install @ubie/ubie-icons react-native-svg
 
 // with yarn
 yarn add @ubie/ubie-icons react-native-svg
+
+// with pnpm
+pnpm add @ubie/ubie-icons react-native-svg
 ```
 
 ## Usage
@@ -53,6 +59,16 @@ export const TwitterButton = () => (
 ```
 
 `currentColor` is set for the icon's path, so you can change the color using CSS.
+
+## Development
+
+This project uses [pnpm](https://pnpm.io/) (see `packageManager` in `package.json`).
+
+```bash
+pnpm install
+pnpm run build
+pnpm run storybook
+```
 
 ## License
 

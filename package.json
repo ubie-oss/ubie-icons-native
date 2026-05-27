@@ -1,5 +1,6 @@
 {
   "name": "@ubie/ubie-icons-native",
+  "packageManager": "pnpm@11.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ubie-oss/ubie-icons-native.git"
@@ -24,7 +25,7 @@
     "build:svg": "svgr --native --template native-template.js -d src assets",
     "build:ts": "tsup",
     "build:copy-svgs": "test -d dist || mkdir dist && cp -R assets/*.svg dist",
-    "build": "npm run build:svg && npm run build:ts && npm run build:copy-svgs",
+    "build": "run-s build:svg build:ts build:copy-svgs",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
