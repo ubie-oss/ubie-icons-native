@@ -10,18 +10,22 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # ratchet:pnpm/action-setup@v4
+        with:
+          version: 11.1.1
       - name: Use Node.js 20
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # ratchet:actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Update svg Icons
-        run: FIGMA_TOKEN=${{ secrets.UBIE_FIGMA_TOKEN }} FIGMA_FILE_KEY=${{ secrets.FIGMA_FILE_KEY }} npm run figma
+        run: FIGMA_TOKEN=${{ secrets.UBIE_FIGMA_TOKEN }} FIGMA_FILE_KEY=${{ secrets.FIGMA_FILE_KEY }} pnpm run figma
       - name: Generate React Components
-        run: npm run build:svg
+        run: pnpm run build:svg
       - name: Format
-        run: npx prettier ./src --write
+        run: pnpm exec prettier ./src --write
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # ratchet:peter-evans/create-pull-request@v6
         with:
