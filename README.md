@@ -21,13 +21,13 @@ pnpm add @ubie/ubie-icons
 
 ```
 // with npm
-npm install @ubie/ubie-icons react-native-svg
+npm install @ubie/ubie-icons-native react-native-svg
 
 // with yarn
-yarn add @ubie/ubie-icons react-native-svg
+yarn add @ubie/ubie-icons-native react-native-svg
 
 // with pnpm
-pnpm add @ubie/ubie-icons react-native-svg
+pnpm add @ubie/ubie-icons-native react-native-svg
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ export const TwitterButton = () => (
 ### React Native
 
 ```js
-import { Twitter } from '@ubie/ubie-icons/native';
+import { Twitter } from '@ubie/ubie-icons-native';
 
 export const TwitterButton = () => (
   <button type="button">
@@ -72,4 +72,4 @@ pnpm run storybook
 
 ## License
 
-This icon set is licensed under the [MIT License](https://github.com/ubie-oss/ubie-icons/blob/main/LICENSE).
+This icon set is licensed under the [MIT License](https://github.com/ubie-oss/ubie-icons-native/blob/main/LICENSE).
